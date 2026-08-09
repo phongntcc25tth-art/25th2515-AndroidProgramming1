@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:accessibilityLiveRegion="polite"
+    android:focusable="auto"
+    android:forceHasOverlappingRendering="true"
+    android:foreground="@android:mipmap/sym_def_app_icon"
+    android:scrollbarStyle="outsideInset"
+    android:scrollbarThumbHorizontal="@mipmap/ic_launcher"
+    android:scrollbarTrackHorizontal="@mipmap/ic_launcher"
+    android:scrollbarTrackVertical="@mipmap/ic_launcher"
+    android:textAlignment="textEnd"
+    android:touchscreenBlocksFocus="true">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="182dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:accessibilityLiveRegion="assertive"
+        android:contentDescription="@string/browse_title"
+        android:scrollbarThumbHorizontal="@android:mipmap/sym_def_app_icon"
+        android:text="@string/hello_xin_chao_ban"
+        android:textAlignment="textEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="720dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
