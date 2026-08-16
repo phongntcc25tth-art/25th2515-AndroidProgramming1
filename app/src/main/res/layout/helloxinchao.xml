@@ -7,4 +7,22 @@
     android:layout_height="match_parent"
     android:foreground="@mipmap/ic_launcher"
     android:visibility="visible"
-    tools:visibility="invisible"/>
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="190dp"
+        android:layout_height="106dp"
+        android:text="A:"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="B:"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
