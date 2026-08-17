@@ -19,8 +19,29 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
-        // Context of the app under test.
+        // Bước 1: Tìm các điều khiển trên giao diện
+        EditText num1 = findViewById(R.id.edt_num1);
+        EditText num2 = findViewById(R.id.edt_num2);
+        TextView result = findViewById(R.id.txt_result);
+        Button btnSum = findViewById(R.id.btn_calculate);
+
+// Bước 2: Gắn trình lắng nghe sự kiện nhấn nút
+        btnSum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Bước 3: Lấy & chuyển đổi dữ liệu
+                int a = Integer.parseInt(num1.getText().toString());
+                int b = Integer.parseInt(num2.getText().toString());
+
+                // Bước 4: Tính tổng
+                int sum = a + b;
+
+                // Bước 5: Hiển thị kết quả
+                result.setText("Kết quả: " + sum);
+            }
+        });
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.phongntcc25tth.appcong2_1", appContext.getPackageName());
     }
+
 }
