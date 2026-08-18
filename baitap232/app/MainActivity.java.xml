@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    package com.example.tinhtong;
+
+    import androidx.appcompat.app.AppCompatActivity;
+    import android.os.Bundle;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.TextView;
+    import android.widget.Toast;
+
+    public class MainActivity extends AppCompatActivity {
+
+    // Bước 1: Khai báo các đối tượng điều khiển
+    EditText edtSo1, edtSo2;
+    Button btnTinhTong;
+    TextView tvKetQua;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // Bước 2: Tìm các điều khiển theo ID
+    edtSo1 = findViewById(R.id.edt_num1);
+    edtSo2 = findViewById(R.id.edt_num2);
+    btnTinhTong = findViewById(R.id.btn_calculate);
+    tvKetQua = findViewById(R.id.tv_result);
+
+    // Bước 3: Gắn trình lắng nghe sự kiện nhấn nút
+    btnTinhTong.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+    // Bước 4: Lấy dữ liệu từ 2 ô nhập
+    String chuoiSo1 = edtSo1.getText().toString().trim();
+    String chuoiSo2 = edtSo2.getText().toString().trim();
+
+    // Kiểm tra ô nhập không để trống
+    if (chuoiSo1.isEmpty() || chuoiSo2.isEmpty()) {
+    Toast.makeText(MainActivity.this,
+    "⚠️ Vui lòng nhập đủ 2 số!",
+    Toast.LENGTH_SHORT).show();
+    return;
+    }
+
+    try {
+    // Bước 5: Chuyển chuỗi → số nguyên & tính tổng
+    int so1 = Integer.parseInt(chuoiSo1);
+    int so2 = Integer.parseInt(chuoiSo2);
+    int tong = so1 + so2;
+
+    // Bước 6: Hiển thị kết quả
+    tvKetQua.setText("✅ Kết quả: " + so1 + " + " + so2 + " = " + tong);
+
+    } catch (NumberFormatException e) {
+    Toast.makeText(MainActivity.this,
+    "❌ Dữ liệu không hợp lệ!",
+    Toast.LENGTH_SHORT).show();
+    }
+    }
+    });
+    }
+    }
+</resources>
